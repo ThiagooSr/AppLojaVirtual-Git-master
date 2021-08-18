@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1034033994252",
+    "project_id": "apploja-88c76",
+    "storage_bucket": "apploja-88c76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034033994252:android:d93d81d02ca2ca279f6c29",
+        "android_client_info": {
+          "package_name": "com.example.lojavirtualapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034033994252-5no5dlm8pnelu1pnbak7sf30m2tmbqnh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ_rcKXDoLVFpF32A7nIj2wsdMZHvsZDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034033994252-5no5dlm8pnelu1pnbak7sf30m2tmbqnh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
