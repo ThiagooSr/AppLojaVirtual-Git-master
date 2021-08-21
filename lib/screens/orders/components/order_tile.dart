@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:lojavirtualapp/models/order.dart';
 import 'package:lojavirtualapp/screens/cart/components/order_product_tile.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lojavirtualapp/helpers/validators.dart';
 import 'package:lojavirtualapp/models/user.dart';
 import 'package:lojavirtualapp/models/user_manager.dart';
 import 'package:provider/provider.dart';
-import 'package:lojavirtualapp/helpers/validators.dart';
 
 class LoginScreen extends StatelessWidget {
   //Comando para enviar os dados para o Firebase.
@@ -17,23 +17,25 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldkey,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text('Entrar'),
         centerTitle: true,
         actions: <Widget>[
-          FlatButton(
+          TextButton(
               onPressed: () {
                 Navigator.of(context).pushReplacementNamed('/signup');
               },
-              textColor: Colors.white,
               child: const Text(
                 'CRIAR CONTA',
-                style: TextStyle(fontSize: 14),
+                style: TextStyle(fontSize: 14, color: Colors.white),
               ))
         ],
       ),
       body: Center(
         child: Card(
           margin: const EdgeInsets.symmetric(horizontal: 16),
+          color: Colors.white70,
+          shadowColor: Colors.lightBlueAccent,
           child: Form(
             key: formkey,
             child: Consumer<UserManager>(
@@ -82,48 +84,68 @@ class LoginScreen extends StatelessWidget {
                       height: 16,
                     ),
                     SizedBox(
-                        height: 44,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.teal,
-                            onPrimary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(32.0),
-                            ),
+                      height: 44,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.teal,
+                          onPrimary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
                           ),
-
-                          onPressed: userManager.loading
-                              ? null
-                              : () {
-                                  if (formkey.currentState.validate()) {
-                                    userManager.signIn(
-                                        user: User(
-                                          email: emailController.text,
-                                          password: passController.text,
-                                        ),
-                                        onFail: (e) {
-                                          scaffoldkey.currentState
-                                              .showSnackBar(SnackBar(
-                                            content:
-                                                Text('Falha ao entrar: $e'),
-                                            backgroundColor: Colors.red,
-                                          ));
-                                        },
-                                        onSuccess: () {
-                                          Navigator.of(context).pop();
-                                        });
-                                  }
-                                },
-                          child: userManager.loading
-                              ? CircularProgressIndicator(
-                                  valueColor:
-                                      AlwaysStoppedAnimation(Colors.white),
-                                )
-                              : const Text(
-                                  'Entrar',
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                        )),
+                        ),
+                        onPressed: userManager.loading
+                            ? null
+                            : () {
+                                if (formkey.currentState.validate()) {
+                                  userManager.signIn(
+                                      user: User(
+                                        email: emailController.text,
+                                        password: passController.text,
+                                      ),
+                                      onFail: (e) {
+                                        scaffoldkey.currentState
+                                            .showSnackBar(SnackBar(
+                                          content: Text('Falha ao entrar: $e'),
+                                          backgroundColor: Colors.red,
+                                        ));
+                                      },
+                                      onSuccess: () {
+                                        Navigator.of(context).pop();
+                                      });
+                                }
+                              },
+                        child: userManager.loading
+                            ? CircularProgressIndicator(
+                                valueColor:
+                                    AlwaysStoppedAnimation(Colors.white),
+                              )
+                            : const Text(
+                                'Entrar',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    SizedBox(
+                      height: 44,
+                      child: ElevatedButton(
+                        child: Text(
+                          'Entrar com Facebook',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          //onPrimary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        onPressed: () {
+                          userManager.facebookLogin();
+                        },
+                      ),
+                    ),
                   ],
                 );
               },

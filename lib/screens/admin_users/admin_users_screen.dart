@@ -12,6 +12,7 @@ class AdminUsersScreen extends StatelessWidget {
     return Scaffold(
         drawer: CustomDrawer(),
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title: const Text('Usuários'),
           centerTitle: true,
         ),

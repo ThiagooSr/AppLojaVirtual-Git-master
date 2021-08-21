@@ -15,12 +15,16 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldkey,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text('Criar Conta'),
         centerTitle: true,
       ),
       body: Center(
         child: Card(
           margin: const EdgeInsets.symmetric(horizontal: 16),
+          color: Colors.white70,
+          shadowColor: Colors.lightBlueAccent,
+
           child: Form(
             key: formkey,
             child: Consumer<UserManager>(
