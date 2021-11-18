@@ -19,8 +19,8 @@ class HomeScreen extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: const [
-                Color.fromARGB(255, 211, 118, 130),
-                Color.fromARGB(255, 253, 181, 168),
+                Color.fromARGB(255, 195, 236, 212),
+                Color.fromARGB(255, 109, 193, 163),
                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 elevation: 0,
                 backgroundColor: Colors.transparent,
                 flexibleSpace: const FlexibleSpaceBar(
-                  title: Text('Loja do Thiago'),
+                  title: Text('Flor de Ipê Modas'),
                   centerTitle: true,
                 ),
                 actions: <Widget>[

@@ -24,6 +24,7 @@ class EditProductScreen extends StatelessWidget {
       value: product,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title:  Text(editing ? 'Editar Produto' : 'Criar Produto'),
           centerTitle: true,
           actions: <Widget>[

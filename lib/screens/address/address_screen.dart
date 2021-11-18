@@ -9,6 +9,7 @@ class AddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text('Entrega'),
         centerTitle: true,
       ),

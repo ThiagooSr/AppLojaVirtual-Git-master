@@ -18,6 +18,7 @@ class CheckoutScreen extends StatelessWidget {
       child: Scaffold(
           key: scaffoldKey,
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title: const Text('Pagamento'),
           centerTitle: true,
         ),

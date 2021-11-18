@@ -8,6 +8,7 @@ import 'package:lojavirtualapp/models/order.dart';
 import 'package:lojavirtualapp/models/orders_manager.dart';
 import 'package:lojavirtualapp/models/product.dart';
 import 'package:lojavirtualapp/models/product_manager.dart';
+import 'package:lojavirtualapp/models/stores_manager.dart';
 import 'package:lojavirtualapp/models/user_manager.dart';
 import 'package:lojavirtualapp/screens/address/address_screen.dart';
 import 'package:lojavirtualapp/screens/base/base_screen.dart';
@@ -21,6 +22,7 @@ import 'package:lojavirtualapp/screens/login/login_screen.dart';
 import 'package:lojavirtualapp/screens/product/product_screen.dart';
 import 'package:lojavirtualapp/screens/select_product/select_product_screen.dart';
 import 'package:provider/provider.dart';
+
 
 
 void main() async {
@@ -49,6 +51,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
               create: (_) => HomeManager(),
                lazy: false,
+          ),
+          ChangeNotifierProvider(
+            create: (_) => StoresManager(),
           ),
           ChangeNotifierProxyProvider<UserManager, CartManager>(
               create: (_) => CartManager(),
@@ -79,11 +84,11 @@ class MyApp extends StatelessWidget {
         ],
 
     child: MaterialApp(
-      title: 'Loja do Thiago',
+      title: 'Flor de Ipê Modas',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color.fromARGB(255, 4, 125, 141),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 4, 125, 141),
+        primaryColor: const Color.fromARGB(255, 106, 202, 210),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 114, 177, 133),
         appBarTheme: const AppBarTheme(elevation: 0),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

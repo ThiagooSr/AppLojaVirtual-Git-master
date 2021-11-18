@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:lojavirtualapp/helpers/firebase_erros.dart';
 import 'package:lojavirtualapp/models/user.dart';
 
+
 class UserManager extends ChangeNotifier {
   UserManager() {
     _loadCurrentUser();
@@ -38,11 +39,42 @@ class UserManager extends ChangeNotifier {
     loading = false;
   }
 
-  void facebookLogin(){
+  /*Future<void> facebookLogin({Function onFail, Function onSuccess}) async {
+    loading = true;
 
-  }
+    final result = await FacebookLogin().logIn(['email', 'public_profile']);
 
+    switch (result.status) {
+      case FacebookLoginStatus.loggedId:
+        final credential = FacebookAuthProvider.getCredential(
+            accessToken: result.accessToken.token
+        );
 
+        final authResult = await auth.signInWithCredential(credential);
+
+        if (authResult.user != null) {
+          final firebaseUser = authResult.user;
+
+          user = User(
+              id: firebaseUser.uid,
+              name: firebaseUser.displayName,
+              email: firebaseUser.email
+          );
+
+          await user.saveData();
+
+          onSuccess();
+        }
+        break;
+      case FacebookLoginStatus.cancelledByUser:
+        break;
+      case FacebookLoginStatus.error:
+        onFail(result.errorMessage);
+        break;
+    }
+
+    loading = false;
+  }*/
   Future<void> signUp({User user, Function onFail, Function onSuccess}) async {
     loading = true;
     try {
@@ -87,4 +119,7 @@ class UserManager extends ChangeNotifier {
     }
   }
   bool get adminEnabled => user != null && user.admin;
+}
+
+mixin FacebookLoginStatus {
 }

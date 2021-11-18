@@ -4,6 +4,7 @@ import 'package:lojavirtualapp/models/user.dart';
 import 'package:lojavirtualapp/models/user_manager.dart';
 import 'package:provider/provider.dart';
 
+
 class LoginScreen extends StatelessWidget {
   //Comando para enviar os dados para o Firebase.
   final TextEditingController emailController = TextEditingController();
@@ -35,7 +36,7 @@ class LoginScreen extends StatelessWidget {
         child: Card(
           margin: const EdgeInsets.symmetric(horizontal: 16),
           color: Colors.white70,
-          shadowColor: Colors.lightBlueAccent,
+          shadowColor: Colors.teal,
           child: Form(
             key: formkey,
             child: Consumer<UserManager>(
@@ -142,7 +143,20 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          userManager.facebookLogin();
+
+                          /*userManager.facebookLogin(
+                              onFail: (e){
+                                scaffoldkey.currentState.showSnackBar(
+                                    SnackBar(
+                                      content: Text('Falha ao entrar: $e'),
+                                      backgroundColor: Colors.red,
+                                    )
+                                );
+                              },
+                              onSuccess: (){
+                                Navigator.of(context).pop();
+                              }
+                          );*/
                         },
                       ),
                     ),
