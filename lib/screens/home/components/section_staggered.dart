@@ -20,6 +20,8 @@ class SectionStaggered extends StatelessWidget {
     return ChangeNotifierProvider.value(
       value: section,
       child: Container(
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10))),
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

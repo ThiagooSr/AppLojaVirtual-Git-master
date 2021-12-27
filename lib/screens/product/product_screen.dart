@@ -20,6 +20,7 @@ class ProductScreen extends StatelessWidget {
       value: product,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 109, 193, 163),
           title: Text(product.name),
           centerTitle: true,
           actions: <Widget>[

@@ -3,6 +3,7 @@ import 'package:lojavirtualapp/models/product.dart';
 import 'package:lojavirtualapp/models/product_manager.dart';
 import 'package:lojavirtualapp/screens/edit_product/components/sizes_form.dart';
 import 'package:provider/provider.dart';
+
 import 'components/images_form.dart';
 
 class EditProductScreen extends StatelessWidget {
@@ -23,6 +24,7 @@ class EditProductScreen extends StatelessWidget {
       value: product,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title:  Text(editing ? 'Editar Produto' : 'Criar Produto'),
           centerTitle: true,
           actions: <Widget>[

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lojavirtualapp/common/price_card.dart';
 import 'package:lojavirtualapp/models/cart_manager.dart';
 import 'package:lojavirtualapp/models/checkout_manager.dart';
-import 'package:lojavirtualapp/models/page_manager.dart';
 import 'package:provider/provider.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -19,6 +18,7 @@ class CheckoutScreen extends StatelessWidget {
       child: Scaffold(
           key: scaffoldKey,
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title: const Text('Pagamento'),
           centerTitle: true,
         ),

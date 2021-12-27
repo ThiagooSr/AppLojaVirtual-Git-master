@@ -5,7 +5,6 @@ import 'package:lojavirtualapp/common/empty_card.dart';
 import 'package:lojavirtualapp/models/admin_orders__manager.dart';
 import 'package:lojavirtualapp/screens/orders/components/order_tile.dart';
 import 'package:provider/provider.dart';
-import 'package:lojavirtualapp/models/user.dart';
 
 class AdminOrdersScreen extends StatelessWidget {
   @override
@@ -13,6 +12,7 @@ class AdminOrdersScreen extends StatelessWidget {
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text('Todos os Pedidos'),
         centerTitle: true,
       ),

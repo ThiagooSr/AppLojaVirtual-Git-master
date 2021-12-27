@@ -53,12 +53,12 @@ class CustomDrawer extends StatelessWidget {
                   children: <Widget>[
                     const Divider(),
                       DrawerTile(
-                        iconData: Icons.settings,
+                        iconData: Icons.group_sharp,
                         title: 'Usuários',
                         page: 4,
                       ),
                       DrawerTile(
-                        iconData: Icons.settings,
+                        iconData: Icons.article_outlined,
                         title: 'Pedidos',
                         page: 5,
                       ),
